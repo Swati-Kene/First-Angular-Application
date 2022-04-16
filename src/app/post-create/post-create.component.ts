@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostCreateComponent implements OnInit {
 
+  Title:string = "Login My App";
   username: string = ' ';
   password: string = ' ';
+  imageUrl: string = "assets/image/mean_logo.png";
+  btnStatus: boolean = false;
   LoginUser()
   {
     this.username && this.password;
