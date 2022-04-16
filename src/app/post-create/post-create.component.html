@@ -1,0 +1,27 @@
+<body>
+<form>
+  <h1 style="background-color: darkorchid;">Login My App</h1>
+  <style>
+ *{
+   text-align: center;
+ }
+ #username,
+ #password {
+   margin: 5px;
+   padding: 2px;
+   text-align: center;
+ }
+  </style>
+  <div class="input">
+    <label>Username</label>
+    <input type="text" style="margin-left: 10px;" name="username" [(ngModel)]="username">
+  </div>
+  <br>
+  <div class="input">
+    <label>Password</label>
+    <input type="password" style="margin-left: 10px;" name="password" [(ngModel)]="password">
+  </div>
+</form>
+  <hr>
+    <button type="submit" style="margin-left: 80px;"  (click)="LoginUser()">Login</button>
+  </body>
