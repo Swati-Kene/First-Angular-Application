@@ -1,7 +1,41 @@
-<body>
+<mat-card>
+  <form (submit)="addPost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        name="title"
+        ngModel
+        required
+        minlength="3"
+        placeholder="Post Title"
+        #title="ngModel">
+      <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="4"
+        name="content"
+        ngModel
+        required
+        placeholder="Post Content"
+        #content="ngModel"></textarea>
+      <mat-error *ngIf="content.invalid">Please enter a post title.</mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit">Save Post</button>
+  </form>
+</mat-card>
+
+<!--body>
 <form>
   <p><b>interpolation</b></p>
   <h1 style="background-color: darkorchid;">{{ Title }}</h1>
+
+
   <style>
  *{
    text-align: center;
@@ -16,12 +50,12 @@
   <p><b>Two-way-DataBinding & Event Binding</b></p>
   <div class="input">
     <label>Username</label>
-    <input type="text" style="margin-left: 10px;" name="username" [(ngModel)]="username">
+    <input type="text" style="margin-left: 10px;" name="username" >
   </div>
   <br>
   <div class="input">
     <label>Password</label>
-    <input type="password" style="margin-left: 10px;" name="password" [(ngModel)]="password">
+    <input type="password" style="margin-left: 10px;" name="password" >
   </div>
   <br>
 </form>
@@ -30,4 +64,4 @@
     <p><b>Property Binding</b></p>
     <img [src]="imageUrl"/>
     <button [disabled]="btnStatus">Click</button>
-  </body>
+  </body-->

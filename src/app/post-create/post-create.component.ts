@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-post-create',
@@ -7,20 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostCreateComponent implements OnInit {
 
-  Title:string = "Login My App";
-  username: string = ' ';
-  password: string = ' ';
-  imageUrl: string = "assets/image/mean_logo.png";
-  btnStatus: boolean = false;
-  LoginUser()
-  {
-    this.username && this.password;
-    {
-      console.log("Welcome")
-    }
-  }
-  constructor() { }
+  title="";
+  content="";
 
-  ngOnInit() :void{
+  constructor(public postService: PostService) { }
+
+  addPost(form:NgForm){
+    this.postService.addPostService(form.value.title, form.value.content);
+
   }
+  ngOnInit(): void {
+  }
+
 }
